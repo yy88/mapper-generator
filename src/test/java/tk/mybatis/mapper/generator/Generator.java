@@ -48,6 +48,7 @@ public class Generator {
         List<String> warnings = new ArrayList<String>();
         boolean overwrite = true;
         ConfigurationParser cp = new ConfigurationParser(warnings);
+        //generatorConfig.xml这个是主要的配置文件，很重要
         Configuration config = cp.parseConfiguration(getResourceAsStream("generatorConfig.xml"));
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
